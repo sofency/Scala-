@@ -78,7 +78,7 @@ object TestArray {
     //创建匿名的数组
     val func = (i:Int) => i*fact+2
     println("iterate")  //按照上一步计算的结果带入下一步的参数进行计算
-    var demo = iterate(1,5)(func)
+    var demo = iterate(1,5)(func) //1 4 10 22 46 填充数组
 
     for(a <- demo){
       printf(a+" ")
@@ -90,6 +90,7 @@ object TestArray {
     println()
 
     println("计算指定函数  传入下表进行计算")
+
     var tabArray = tabulate(3)(func)
     for(a <- tabArray){
       printf(a+" ")

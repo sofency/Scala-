@@ -10,9 +10,9 @@ object TestList {
   def main(args: Array[String]): Unit = {
     //定义列表
     val site:List[String] = List("sofnecy","alice","baidu");
+
     //等同于
     val site1 = "sofnecy"::("alice"::("baidu"::Nil))
-
     println("site head "+site.head)
     println("site tail "+site.tail)
     println("site isEmpty "+site.isEmpty)
@@ -21,11 +21,11 @@ object TestList {
     //等同于
     val nums2 = 1::(2::(3::Nil))
 
-    //空列表
+    //空列表 使用Nil 定义空列表  或者以Nil结尾表示列表之后没有元素了
     val empty:List[Nothing] = List()
     val emptyNil = Nil
 
-    //二微数组
+    //二维数组
     val dim:List[List[Int]] = List(
       List(1,2,3),
       List(4,5,6),
@@ -48,9 +48,11 @@ object TestList {
 
     val tab = List.tabulate(4)(a => a*2)
     println(tab)
+    //定义匿名函数
     val func = (a:Int,b:Int) => {
       a*3+b*4
     }
+    //对列表的元素进行操作
     val tab1 = List.tabulate(3,4)(func)
     println(tab1)
 
@@ -60,12 +62,9 @@ object TestList {
     //添加元素
     val temp = "taobao"+:site
     println(temp)
-
     println("连接的字符串是"+(temp:::site))
-
     //获取字符串
     println(site.apply(2))
-
     println("去重"+temp.distinct)
     println(temp)
     println("删除掉元素"+temp.drop(1))
@@ -78,6 +77,10 @@ object TestList {
     val sort = List(3,32,12,3,4,6,1)
     println("列表排序"+sort.sorted)
     println("最后一个元素"+sort.last)
+    //将列表的所有元素添加到StringBuilder中
+    val string = new StringBuilder;
+    println(sort.addString(string,","))
+
   }
 }
 

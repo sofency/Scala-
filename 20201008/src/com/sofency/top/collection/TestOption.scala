@@ -11,10 +11,12 @@ package com.sofency.top.collection
 object TestOption {
   def main(args: Array[String]): Unit = {
     val map:Map[String,String] = Map("key1"->"values")
+    map.+("key2"->"value2")
+    map.+("key3"->"value3")
     println(map("key1"))
     //使用.get防止出现空指针异常
     println(map.get("key2"))
-    val option =Some(21,2,2)
+    val option = Some(21,2,2)
     println(option.get)
     println("元素的个数"+option.productArity)//就是一个选项
     println("获取元素的选项"+option.productElement(0))
